@@ -25,3 +25,10 @@ void ABP_Cube::Tick(float DeltaTime)
 
 }
 
+void ABP_Cube::ChangeColor()
+{
+	UMaterialInstanceDynamic* CustomMat = UMaterialInstanceDynamic::Create(Material, CubeMesh);
+	CubeMesh->SetMaterial(0, CustomMat);
+	CustomMat->SetVectorParameterValue("BaseColor", FinalColor);
+}
+
